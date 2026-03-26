@@ -1,0 +1,6 @@
+- op: replace
+  path: /metadata/name
+  value: persistent-prod
+- op: replace
+  path: /metadata/namespace
+  value: redis-prod

@@ -1,12 +1,18 @@
-apiVersion: app.redislabs.com/v1alpha1
-kind: RedisEnterpriseDatabase
-metadata:
-  name: persistent-prod
-  namespace: redis-prod
-  labels:
-    team: prod-team
-    environment: prod
-    database-type: persistent
-spec:
-  redisEnterpriseCluster:
-    name: demo-redis-cluster
+- op: replace
+  path: /metadata/name
+  value: persistent-prod
+- op: replace
+  path: /metadata/namespace
+  value: redis-prod
+- op: add
+  path: /metadata/labels/team
+  value: prod-team
+- op: add
+  path: /metadata/labels/environment
+  value: prod
+- op: add
+  path: /metadata/labels/database-type
+  value: persistent
+- op: replace
+  path: /spec/redisEnterpriseCluster/name
+  value: demo-redis-cluster

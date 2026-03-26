@@ -17,16 +17,4 @@ spec:
       memory: "4Gi"
   persistentSpec:
     enabled: true
-    storageClassName: standard
     volumeSize: 30Gi
-  redisEnterpriseImageSpec:
-    imagePullPolicy: IfNotPresent
----
-apiVersion: route.openshift.io/v1
-kind: Route
-metadata:
-  name: redis-enterprise-ui
-  namespace: redis-enterprise
-  labels:
-    app.kubernetes.io/managed-by: "argocd"
-spec:
