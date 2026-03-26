@@ -1,0 +1,9 @@
+apiVersion: app.redislabs.com/v1alpha1
+kind: RedisEnterpriseDatabase
+metadata:
+  name: cache-base
+spec:
+  type: redis
+  memorySize: 1GB
+  evictionPolicy: allkeys-lru
+  persistence: disabled

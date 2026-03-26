@@ -15,9 +15,10 @@ This repository contains a simple demo for deploying applications on OpenShift u
 
 - `argocd-apps/`: ArgoCD Application and ApplicationSet manifests
 - `bases/`: Base Kustomize configurations for Redis cluster and databases
+- `overlays/`: Kustomize overlays for database types (cache, persistent) with common configurations
 - `databases/`: Database-specific configurations (each subdir creates an ArgoCD app via ApplicationSet)
   - Each subdirectory contains a `kustomization.yaml` and `patch.yaml`
-  - Customize `patch.yaml` with your own Redis settings (memory, persistence, eviction, etc.)
+  - Extend an overlay and customize `patch.yaml` with specific database settings
 
 ## Usage
 
@@ -26,15 +27,14 @@ This repository contains a simple demo for deploying applications on OpenShift u
 3. In ArgoCD, create the Application for the cluster: `argocd-apps/redis-cluster-app.yaml`
 4. Create the ApplicationSet for databases: `argocd-apps/redis-databases-appset.yaml`
 5. To add a new database, create a new subdir in `databases/` with:
-   - `kustomization.yaml` - references the base
-   - `patch.yaml` - customize Redis settings for your needs
+   - `kustomization.yaml` - references an overlay (cache, persistent, or create your own)
+   - `patch.yaml` - customize specific settings (name, namespace, cluster reference, etc.)
 6. Commit and push; ArgoCD will automatically create the app and deploy the database
 
-## Customization
+## Overlays
 
-Each database in `databases/` can have completely different configurations. Example customizations in `patch.yaml`:
-- `memorySize`: Database memory allocation
-- `persistence`: disabled | aofEverySecond | snapshotEverySecond
-- `evictionPolicy`: noeviction | allkeys-lru | allkeys-random
-- `replication`: true | false
-- `shardCount`: Number of shards
+Pre-configured database profiles:
+- **cache**: Optimized for temporary data - 1GB memory, LRU eviction, no persistence
+- **persistent**: Optimized for critical data - 4GB memory, no eviction, AOF persistence, replication enabled
+
+Create additional overlays for your specific use cases (e.g., `overlays/session/`, `overlays/queue/`)

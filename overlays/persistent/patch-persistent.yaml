@@ -1,0 +1,10 @@
+apiVersion: app.redislabs.com/v1alpha1
+kind: RedisEnterpriseDatabase
+metadata:
+  name: persistent-base
+spec:
+  type: redis
+  memorySize: 4GB
+  evictionPolicy: noeviction
+  persistence: aofEverySecond
+  replication: true

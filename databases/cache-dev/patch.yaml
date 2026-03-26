@@ -10,8 +10,3 @@ metadata:
 spec:
   redisEnterpriseCluster:
     name: demo-redis-cluster
-  # Cache settings - temporary data with eviction
-  memorySize: 1GB
-  type: redis
-  evictionPolicy: allkeys-lru
-  persistence: disabled
