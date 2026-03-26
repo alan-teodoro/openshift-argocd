@@ -4,7 +4,7 @@ metadata:
   name: database
 spec:
   type: redis
-  memorySize: 2GB
+  memorySize: 512MB
   evictionPolicy: noeviction
   persistence: aofEverySecond
   replication: false
