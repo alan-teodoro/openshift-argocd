@@ -1,0 +1,57 @@
+---
+# Source: redis-enterprise-database/templates/redb.yaml
+apiVersion: app.redislabs.com/v1alpha1
+kind: RedisEnterpriseDatabase
+metadata:
+  name: cache-dev
+  namespace: redis-orders-dev
+  labels:
+    # Mandatory labels for Gatekeeper policy compliance
+    team: orders-team
+    environment: dev
+    cost-center: CC-0000
+    app: cache
+
+    # Additional labels for organization
+    cluster: orders
+    database: cache
+    env: dev
+    type: cache
+    app.kubernetes.io/managed-by: "argocd"
+    gitops: "argocd"
+spec:
+  redisEnterpriseCluster:
+    name: orders-redis-cluster
+  
+  memorySize: 2GB
+  replication: true
+  persistence: aofEverySecond
+  databasePort: 12000
+  tlsMode: enabled
+  type: redis
+  evictionPolicy: noeviction
+  shardCount: 2
+---
+# Source: redis-enterprise-database/templates/route.yaml
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: cache-dev
+  namespace: redis-orders-dev
+  labels:
+    cluster: orders
+    team: orders-team
+    database: cache
+    env: dev
+    component: database
+    app.kubernetes.io/managed-by: "argocd"
+    gitops: "argocd"
+spec:
+  to:
+    kind: Service
+    name: redis-12000
+  port:
+    targetPort: 12000
+  tls:
+    termination: passthrough
+    insecureEdgeTerminationPolicy: Redirect

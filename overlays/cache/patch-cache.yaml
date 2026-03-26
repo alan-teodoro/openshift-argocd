@@ -1,0 +1,8 @@
+apiVersion: app.redislabs.com/v1alpha1
+kind: RedisEnterpriseDatabase
+metadata:
+  name: cache-dev  # This will be overridden by Application Set
+spec:
+  type: redis
+  memorySize: 1GB
+  evictionPolicy: allkeys-lru

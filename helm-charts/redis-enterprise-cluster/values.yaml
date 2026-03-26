@@ -1,0 +1,105 @@
+# Default values for redis-enterprise-cluster
+# This is a YAML-formatted file.
+
+# Cluster identification
+cluster:
+  name: orders
+  team: orders-team
+  datacenter: dc1
+
+# Namespace where cluster will be deployed
+namespace: redis-enterprise
+
+# Redis Enterprise Cluster configuration
+redis:
+  # Cluster name (will be: {cluster.name}-redis-cluster)
+  clusterName: orders-redis-cluster
+  
+  # Number of nodes in the cluster
+  nodes: 3
+  
+  # Redis Enterprise version
+  version: "8.0.6-54"
+
+  # Optional REC certificate configuration for TLS endpoints.
+  # Each secret should contain: certificate, key, name
+  # Supported names: proxy, api, cm, syncer, metrics_exporter
+  certificates:
+    # When true, create REC certificate secrets from certificate/key values below.
+    # Useful for fully automated demo/lab clusters.
+    createSecrets: false
+    certificate: ""
+    key: ""
+    proxyCertificateSecretName: ""
+    apiCertificateSecretName: ""
+    cmCertificateSecretName: ""
+    syncerCertificateSecretName: ""
+    metricsExporterCertificateSecretName: ""
+  
+  # Node resources
+  resources:
+    requests:
+      cpu: "1"
+      memory: "2Gi"
+    limits:
+      cpu: "2"
+      memory: "4Gi"
+  
+  # Persistent storage configuration
+  persistence:
+    enabled: true
+    storageClassName: ocs-external-storagecluster-ceph-rbd
+    volumeSize: 50Gi
+
+  # Optional Service Rigger settings
+  # Enable this to get stable database service names (for example: bdb_name).
+  servicesRiggerSpec:
+    enabled: false
+    databaseServiceType: "cluster_ip"
+    serviceNaming: "bdb_name"
+
+  # Pod anti-affinity for high availability
+  # Spreads Redis pods across nodes and zones
+  podAntiAffinity:
+    preferredDuringSchedulingIgnoredDuringExecution:
+      # Node-level: Spread across different nodes (HIGH priority)
+      - weight: 100
+        podAffinityTerm:
+          labelSelector:
+            matchLabels:
+              app: redis-enterprise
+          topologyKey: kubernetes.io/hostname
+
+      # Zone-level: Spread across different zones (MEDIUM priority)
+      - weight: 50
+        podAffinityTerm:
+          labelSelector:
+            matchLabels:
+              app: redis-enterprise
+          topologyKey: topology.kubernetes.io/zone
+
+# Routes configuration
+routes:
+  # Enable route for Redis Enterprise UI
+  ui:
+    enabled: true
+    host: ""
+    # TLS termination (passthrough or edge)
+    tlsTermination: passthrough
+
+# Monitoring configuration
+monitoring:
+  # Enable Prometheus monitoring
+  enabled: false
+  # Scrape interval for Prometheus
+  scrapeInterval: 30s
+  # Scrape timeout
+  scrapeTimeout: 10s
+
+# Labels applied to all resources
+labels:
+  app.kubernetes.io/managed-by: argocd
+  gitops: argocd
+
+# Annotations applied to all resources
+annotations: {}

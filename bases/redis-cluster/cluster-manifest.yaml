@@ -1,0 +1,715 @@
+---
+# Source: redis-enterprise-cluster/templates/rec-certificate-secrets.yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: proxy-cert-secret
+  namespace: redis-enterprise
+  annotations:
+    argocd.argoproj.io/sync-wave: "-1"
+  labels:
+    app: redis-enterprise
+    cluster: demo
+    team: platform-team
+    component: certificates
+type: Opaque
+stringData:
+  certificate: |-
+
+    -----BEGIN CERTIFICATE-----
+    MIIGSTCCBDGgAwIBAgIUQZaFRHu04a7zsxizW7KzYStLVQkwDQYJKoZIhvcNAQEL
+    BQAwZzELMAkGA1UEBhMCQlIxCzAJBgNVBAgMAlNQMRIwEAYDVQQHDAlTYW8gUGF1
+    bG8xEjAQBgNVBAoMCURlbW9SZWRpczELMAkGA1UECwwCUFMxFjAUBgNVBAMMDWRl
+    bW8tcmVkaXMtY2EwHhcNMjYwMjI1MTk0MDAzWhcNMjcwMjI1MTk0MDAzWjBjMQsw
+    CQYDVQQGEwJCUjELMAkGA1UECAwCU1AxEjAQBgNVBAcMCVNhbyBQYXVsbzESMBAG
+    A1UECgwJRGVtb1JlZGlzMR8wHQYDVQQDDBZyZWRpcy1kZW1vLmV4YW1wbGUuY29t
+    MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwkxvt2LMYR5TyrWEJTXQ
+    /HkYD97hm4SbWpOlrOTIK0g3Ll5bMhX9cOKpX80P4/kz+/n/txLsq2aO7YTXlfF5
+    sz1t2X9X16nJAsnTBVwL4TyiA3SGKjXSd2ms54hfQdKIyNzts8tBBPOkFqWKADsX
+    XnoVGLJr7ofuB2u9nLk7b4Rgov+22gFOkx5IT5FcG8x5ekYf5Lk6avq3kKCpXfws
+    oJd3qzPYx2sIYYrkzokNkg6w0Wj/pzkT/V0DPFb5BGpfzpOW7ub+6AfMGMsmrFXS
+    LFt934kuhYxgbv1C8nXot9aTAHeqSlSYWEqwLhAkEf8rwbCIyK8F7OvShUhSt7Df
+    1QIDAQABo4IB7zCCAeswCQYDVR0TBAIwADAOBgNVHQ8BAf8EBAMCBaAwEwYDVR0l
+    BAwwCgYIKwYBBQUHAwEwggF3BgNVHREEggFuMIIBaoIWcmVkaXMtZGVtby5leGFt
+    cGxlLmNvbYIYKi5yZWRpcy1kZW1vLmV4YW1wbGUuY29tgiQqLnJlZGlzLWVudGVy
+    cHJpc2Uuc3ZjLmNsdXN0ZXIubG9jYWyCIyoucmVkaXMtdGVhbTEtZGV2LnN2Yy5j
+    bHVzdGVyLmxvY2FsgiQqLnJlZGlzLXRlYW0xLXByb2Quc3ZjLmNsdXN0ZXIubG9j
+    YWyCIyoucmVkaXMtdGVhbTItZGV2LnN2Yy5jbHVzdGVyLmxvY2FsgiQqLnJlZGlz
+    LXRlYW0yLXByb2Quc3ZjLmNsdXN0ZXIubG9jYWyCFioucmVkaXMtZW50ZXJwcmlz
+    ZS5zdmOCFSoucmVkaXMtdGVhbTEtZGV2LnN2Y4IWKi5yZWRpcy10ZWFtMS1wcm9k
+    LnN2Y4IVKi5yZWRpcy10ZWFtMi1kZXYuc3ZjghYqLnJlZGlzLXRlYW0yLXByb2Qu
+    c3ZjhwR/AAABMB0GA1UdDgQWBBTbm2yhqdnThcg4/4+080XahJDrgDAfBgNVHSME
+    GDAWgBRlUam3fmzfwWKAYYeHw6F5LDHzmTANBgkqhkiG9w0BAQsFAAOCAgEAdwDC
+    qvuU2/pHFVFe1qk5vGsAgcEsQ+35VinLJu+HZUybcccdpyX3ChtWjD0fYwtMzCVa
+    C+V/jjkzvEdU/v25NnMJMzO2dOGR8zRIThPR2UgZjREbsK3D8McyYqhN5aVT88gB
+    NndC0833VYyN9m2il7cQzLsdN4kw6sipEEroPqrrpEuHdcQzle78/QK86muBYcvL
+    pv4LQRK0NkbZhaHU8i+445cailWaT/ei+gFaMBXK5WhDu1toDzoUREikTugm5+UI
+    gTnR2z0z0CjmcXEOJ3PTgnmFxzc52zCqNFLn2Ual913Q1Eejsb6EXEc6vlWnqhTg
+    cb7BojW3t7bnig5VpcoCFlu/UZc75BT2lMWPzqNJFbNWFzK+zFtuufRi4v9hvIH2
+    DV2O5geTVW8KZAK9FrKySXk5GdDF3C1oH+VpJ25K4OvahkZIw+8SD/ol6MKJL+iW
+    UDHxiRtxt+pavmwJPPoZPs8yMz9u9ZwK4V+RHcE76682JYWSNMa8ofcAcXkZeijN
+    o6HlR7ktQqqEa4Rl/fvOxNrkkDWm966Uq+uhPHlyE3n6POshF4LXJlGCdDemndZm
+    FNtRRXXniK3WSKe8zNpbGMlGVzvW1E24PIsm36CaKcAhIZ93Y4yY6vBo3IW2fO+g
+    4oMtVSVmtCuN0STvi3w0N2Vgt2yG3LTQjGLYRoQ=
+    -----END CERTIFICATE-----
+    
+  key: |-
+
+    -----BEGIN PRIVATE KEY-----
+    MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDCTG+3YsxhHlPK
+    tYQlNdD8eRgP3uGbhJtak6Ws5MgrSDcuXlsyFf1w4qlfzQ/j+TP7+f+3EuyrZo7t
+    hNeV8XmzPW3Zf1fXqckCydMFXAvhPKIDdIYqNdJ3aazniF9B0ojI3O2zy0EE86QW
+    pYoAOxdeehUYsmvuh+4Ha72cuTtvhGCi/7baAU6THkhPkVwbzHl6Rh/kuTpq+reQ
+    oKld/Cygl3erM9jHawhhiuTOiQ2SDrDRaP+nORP9XQM8VvkEal/Ok5bu5v7oB8wY
+    yyasVdIsW33fiS6FjGBu/ULydei31pMAd6pKVJhYSrAuECQR/yvBsIjIrwXs69KF
+    SFK3sN/VAgMBAAECggEACSYL4pYn1RuA9Yaregxj0pIpxGGJvPFhq+z6Jum/f8OO
+    5EOJcWfLVFvlKWogk+rsJt1ZduImEQIAu9qpQ1mokdHUJiK9XPMVJb5MDdtiLHus
+    OJPC13eg+SzEI+4YvM2FfEkOy4xH+6GJ5I5shjXsvpmVUbbg/HfGXkS/8QJgc+Uy
+    NwCfnKywLxlyhe5e6PW/PVfhSfangrzR+WCapPT/ONcXp+hskrcSNnCBmD5CBBPx
+    v2qpaWtcvVrmFt/+L37KqTSmsYrbXX56zgYiITtjEVo6QW/xlNiSWUFBZkdPAd73
+    m/vieOsB3NxyS4C5Ni9ma8si6QqCPl0q/FW9SEMCBwKBgQDyAcTB+e4tNrGH7HNu
+    xogXkB2tc4dsplm0EW7JrONU94Q1kxjx52sXR5WLnu93DyAx8Q+oZggL0UXJrzlE
+    XraVZjKyrdvDFwfBj2LzmEbdpS5DelvsO6HhyjG/YaVFrE+zWca5rPBGD4xU2Uop
+    C2ZkBeSHO36pxAoIFE6FNJAFlwKBgQDNiHrvyj7HZRxhiGNyW/lNGR37rzYwX+4J
+    vnH1WmDn4PbKG05kz2jgyPw+uo5TTM29sD1lyyULfIXF9y/lf2sTyS4ynwTvtpOW
+    hGgsReNgXqPhFtUZS+FohY1PFz9yikcUR4JZCTo5RNUoYl0IUhvK4kH/2ZZ1uMv/
+    qOZPtCIrcwKBgCj9G7Iu/qQxy0fWSIbOoWY8RoqGMr24PyE8gqMt4SMW+RGJ5IO0
+    SnMa8L1BIhXsPeu3hItlHJ/Dxiouv2hREmOjd5rDz6DvWaTzADN56ybHP1q2crNE
+    NlrjwCFGDJQMZ0NdRUdVfyyenYoRc3oYMDNovBgbf4yJY5mStungyTPpAoGAH3Y0
+    21/qHDuuDIAEOQ07LEIcBNrdQKpula9BYn1jOBuHq4hih6v4MfCSLEgCYV3wYIkJ
+    3PsrwIZfM96Sxl6q1WyGVdlhuBAKp4+9IonQNIBINbx5AlZLOuS2rNSyMaZZGxGX
+    MmnnL70JpBTqiMuI1ZWs5K06CusuzwPbvXelg2ECgYEAxY/rQLHsL1ZPztmBP6S8
+    smtOivubjRLI5Af+xxrIYN29EUtn7RdocZeAmIwpCEwQcBWRy/HZp33hVw+4uxVG
+    CaRklLZegZ+b+U4ZLBWl3hIIwE3eerxA5czlHcyNIIGvDHurOszxaksMAqxH/kyg
+    YkHnEQElGJB/d4moFxet1Z0=
+    -----END PRIVATE KEY-----
+    
+  name: "proxy"
+---
+# Source: redis-enterprise-cluster/templates/rec-certificate-secrets.yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: api-cert-secret
+  namespace: redis-enterprise
+  annotations:
+    argocd.argoproj.io/sync-wave: "-1"
+  labels:
+    app: redis-enterprise
+    cluster: demo
+    team: platform-team
+    component: certificates
+type: Opaque
+stringData:
+  certificate: |-
+
+    -----BEGIN CERTIFICATE-----
+    MIIGSTCCBDGgAwIBAgIUQZaFRHu04a7zsxizW7KzYStLVQkwDQYJKoZIhvcNAQEL
+    BQAwZzELMAkGA1UEBhMCQlIxCzAJBgNVBAgMAlNQMRIwEAYDVQQHDAlTYW8gUGF1
+    bG8xEjAQBgNVBAoMCURlbW9SZWRpczELMAkGA1UECwwCUFMxFjAUBgNVBAMMDWRl
+    bW8tcmVkaXMtY2EwHhcNMjYwMjI1MTk0MDAzWhcNMjcwMjI1MTk0MDAzWjBjMQsw
+    CQYDVQQGEwJCUjELMAkGA1UECAwCU1AxEjAQBgNVBAcMCVNhbyBQYXVsbzESMBAG
+    A1UECgwJRGVtb1JlZGlzMR8wHQYDVQQDDBZyZWRpcy1kZW1vLmV4YW1wbGUuY29t
+    MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwkxvt2LMYR5TyrWEJTXQ
+    /HkYD97hm4SbWpOlrOTIK0g3Ll5bMhX9cOKpX80P4/kz+/n/txLsq2aO7YTXlfF5
+    sz1t2X9X16nJAsnTBVwL4TyiA3SGKjXSd2ms54hfQdKIyNzts8tBBPOkFqWKADsX
+    XnoVGLJr7ofuB2u9nLk7b4Rgov+22gFOkx5IT5FcG8x5ekYf5Lk6avq3kKCpXfws
+    oJd3qzPYx2sIYYrkzokNkg6w0Wj/pzkT/V0DPFb5BGpfzpOW7ub+6AfMGMsmrFXS
+    LFt934kuhYxgbv1C8nXot9aTAHeqSlSYWEqwLhAkEf8rwbCIyK8F7OvShUhSt7Df
+    1QIDAQABo4IB7zCCAeswCQYDVR0TBAIwADAOBgNVHQ8BAf8EBAMCBaAwEwYDVR0l
+    BAwwCgYIKwYBBQUHAwEwggF3BgNVHREEggFuMIIBaoIWcmVkaXMtZGVtby5leGFt
+    cGxlLmNvbYIYKi5yZWRpcy1kZW1vLmV4YW1wbGUuY29tgiQqLnJlZGlzLWVudGVy
+    cHJpc2Uuc3ZjLmNsdXN0ZXIubG9jYWyCIyoucmVkaXMtdGVhbTEtZGV2LnN2Yy5j
+    bHVzdGVyLmxvY2FsgiQqLnJlZGlzLXRlYW0xLXByb2Quc3ZjLmNsdXN0ZXIubG9j
+    YWyCIyoucmVkaXMtdGVhbTItZGV2LnN2Yy5jbHVzdGVyLmxvY2FsgiQqLnJlZGlz
+    LXRlYW0yLXByb2Quc3ZjLmNsdXN0ZXIubG9jYWyCFioucmVkaXMtZW50ZXJwcmlz
+    ZS5zdmOCFSoucmVkaXMtdGVhbTEtZGV2LnN2Y4IWKi5yZWRpcy10ZWFtMS1wcm9k
+    LnN2Y4IVKi5yZWRpcy10ZWFtMi1kZXYuc3ZjghYqLnJlZGlzLXRlYW0yLXByb2Qu
+    c3ZjhwR/AAABMB0GA1UdDgQWBBTbm2yhqdnThcg4/4+080XahJDrgDAfBgNVHSME
+    GDAWgBRlUam3fmzfwWKAYYeHw6F5LDHzmTANBgkqhkiG9w0BAQsFAAOCAgEAdwDC
+    qvuU2/pHFVFe1qk5vGsAgcEsQ+35VinLJu+HZUybcccdpyX3ChtWjD0fYwtMzCVa
+    C+V/jjkzvEdU/v25NnMJMzO2dOGR8zRIThPR2UgZjREbsK3D8McyYqhN5aVT88gB
+    NndC0833VYyN9m2il7cQzLsdN4kw6sipEEroPqrrpEuHdcQzle78/QK86muBYcvL
+    pv4LQRK0NkbZhaHU8i+445cailWaT/ei+gFaMBXK5WhDu1toDzoUREikTugm5+UI
+    gTnR2z0z0CjmcXEOJ3PTgnmFxzc52zCqNFLn2Ual913Q1Eejsb6EXEc6vlWnqhTg
+    cb7BojW3t7bnig5VpcoCFlu/UZc75BT2lMWPzqNJFbNWFzK+zFtuufRi4v9hvIH2
+    DV2O5geTVW8KZAK9FrKySXk5GdDF3C1oH+VpJ25K4OvahkZIw+8SD/ol6MKJL+iW
+    UDHxiRtxt+pavmwJPPoZPs8yMz9u9ZwK4V+RHcE76682JYWSNMa8ofcAcXkZeijN
+    o6HlR7ktQqqEa4Rl/fvOxNrkkDWm966Uq+uhPHlyE3n6POshF4LXJlGCdDemndZm
+    FNtRRXXniK3WSKe8zNpbGMlGVzvW1E24PIsm36CaKcAhIZ93Y4yY6vBo3IW2fO+g
+    4oMtVSVmtCuN0STvi3w0N2Vgt2yG3LTQjGLYRoQ=
+    -----END CERTIFICATE-----
+    
+  key: |-
+
+    -----BEGIN PRIVATE KEY-----
+    MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDCTG+3YsxhHlPK
+    tYQlNdD8eRgP3uGbhJtak6Ws5MgrSDcuXlsyFf1w4qlfzQ/j+TP7+f+3EuyrZo7t
+    hNeV8XmzPW3Zf1fXqckCydMFXAvhPKIDdIYqNdJ3aazniF9B0ojI3O2zy0EE86QW
+    pYoAOxdeehUYsmvuh+4Ha72cuTtvhGCi/7baAU6THkhPkVwbzHl6Rh/kuTpq+reQ
+    oKld/Cygl3erM9jHawhhiuTOiQ2SDrDRaP+nORP9XQM8VvkEal/Ok5bu5v7oB8wY
+    yyasVdIsW33fiS6FjGBu/ULydei31pMAd6pKVJhYSrAuECQR/yvBsIjIrwXs69KF
+    SFK3sN/VAgMBAAECggEACSYL4pYn1RuA9Yaregxj0pIpxGGJvPFhq+z6Jum/f8OO
+    5EOJcWfLVFvlKWogk+rsJt1ZduImEQIAu9qpQ1mokdHUJiK9XPMVJb5MDdtiLHus
+    OJPC13eg+SzEI+4YvM2FfEkOy4xH+6GJ5I5shjXsvpmVUbbg/HfGXkS/8QJgc+Uy
+    NwCfnKywLxlyhe5e6PW/PVfhSfangrzR+WCapPT/ONcXp+hskrcSNnCBmD5CBBPx
+    v2qpaWtcvVrmFt/+L37KqTSmsYrbXX56zgYiITtjEVo6QW/xlNiSWUFBZkdPAd73
+    m/vieOsB3NxyS4C5Ni9ma8si6QqCPl0q/FW9SEMCBwKBgQDyAcTB+e4tNrGH7HNu
+    xogXkB2tc4dsplm0EW7JrONU94Q1kxjx52sXR5WLnu93DyAx8Q+oZggL0UXJrzlE
+    XraVZjKyrdvDFwfBj2LzmEbdpS5DelvsO6HhyjG/YaVFrE+zWca5rPBGD4xU2Uop
+    C2ZkBeSHO36pxAoIFE6FNJAFlwKBgQDNiHrvyj7HZRxhiGNyW/lNGR37rzYwX+4J
+    vnH1WmDn4PbKG05kz2jgyPw+uo5TTM29sD1lyyULfIXF9y/lf2sTyS4ynwTvtpOW
+    hGgsReNgXqPhFtUZS+FohY1PFz9yikcUR4JZCTo5RNUoYl0IUhvK4kH/2ZZ1uMv/
+    qOZPtCIrcwKBgCj9G7Iu/qQxy0fWSIbOoWY8RoqGMr24PyE8gqMt4SMW+RGJ5IO0
+    SnMa8L1BIhXsPeu3hItlHJ/Dxiouv2hREmOjd5rDz6DvWaTzADN56ybHP1q2crNE
+    NlrjwCFGDJQMZ0NdRUdVfyyenYoRc3oYMDNovBgbf4yJY5mStungyTPpAoGAH3Y0
+    21/qHDuuDIAEOQ07LEIcBNrdQKpula9BYn1jOBuHq4hih6v4MfCSLEgCYV3wYIkJ
+    3PsrwIZfM96Sxl6q1WyGVdlhuBAKp4+9IonQNIBINbx5AlZLOuS2rNSyMaZZGxGX
+    MmnnL70JpBTqiMuI1ZWs5K06CusuzwPbvXelg2ECgYEAxY/rQLHsL1ZPztmBP6S8
+    smtOivubjRLI5Af+xxrIYN29EUtn7RdocZeAmIwpCEwQcBWRy/HZp33hVw+4uxVG
+    CaRklLZegZ+b+U4ZLBWl3hIIwE3eerxA5czlHcyNIIGvDHurOszxaksMAqxH/kyg
+    YkHnEQElGJB/d4moFxet1Z0=
+    -----END PRIVATE KEY-----
+    
+  name: "api"
+---
+# Source: redis-enterprise-cluster/templates/rec-certificate-secrets.yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: cm-cert-secret
+  namespace: redis-enterprise
+  annotations:
+    argocd.argoproj.io/sync-wave: "-1"
+  labels:
+    app: redis-enterprise
+    cluster: demo
+    team: platform-team
+    component: certificates
+type: Opaque
+stringData:
+  certificate: |-
+
+    -----BEGIN CERTIFICATE-----
+    MIIGSTCCBDGgAwIBAgIUQZaFRHu04a7zsxizW7KzYStLVQkwDQYJKoZIhvcNAQEL
+    BQAwZzELMAkGA1UEBhMCQlIxCzAJBgNVBAgMAlNQMRIwEAYDVQQHDAlTYW8gUGF1
+    bG8xEjAQBgNVBAoMCURlbW9SZWRpczELMAkGA1UECwwCUFMxFjAUBgNVBAMMDWRl
+    bW8tcmVkaXMtY2EwHhcNMjYwMjI1MTk0MDAzWhcNMjcwMjI1MTk0MDAzWjBjMQsw
+    CQYDVQQGEwJCUjELMAkGA1UECAwCU1AxEjAQBgNVBAcMCVNhbyBQYXVsbzESMBAG
+    A1UECgwJRGVtb1JlZGlzMR8wHQYDVQQDDBZyZWRpcy1kZW1vLmV4YW1wbGUuY29t
+    MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwkxvt2LMYR5TyrWEJTXQ
+    /HkYD97hm4SbWpOlrOTIK0g3Ll5bMhX9cOKpX80P4/kz+/n/txLsq2aO7YTXlfF5
+    sz1t2X9X16nJAsnTBVwL4TyiA3SGKjXSd2ms54hfQdKIyNzts8tBBPOkFqWKADsX
+    XnoVGLJr7ofuB2u9nLk7b4Rgov+22gFOkx5IT5FcG8x5ekYf5Lk6avq3kKCpXfws
+    oJd3qzPYx2sIYYrkzokNkg6w0Wj/pzkT/V0DPFb5BGpfzpOW7ub+6AfMGMsmrFXS
+    LFt934kuhYxgbv1C8nXot9aTAHeqSlSYWEqwLhAkEf8rwbCIyK8F7OvShUhSt7Df
+    1QIDAQABo4IB7zCCAeswCQYDVR0TBAIwADAOBgNVHQ8BAf8EBAMCBaAwEwYDVR0l
+    BAwwCgYIKwYBBQUHAwEwggF3BgNVHREEggFuMIIBaoIWcmVkaXMtZGVtby5leGFt
+    cGxlLmNvbYIYKi5yZWRpcy1kZW1vLmV4YW1wbGUuY29tgiQqLnJlZGlzLWVudGVy
+    cHJpc2Uuc3ZjLmNsdXN0ZXIubG9jYWyCIyoucmVkaXMtdGVhbTEtZGV2LnN2Yy5j
+    bHVzdGVyLmxvY2FsgiQqLnJlZGlzLXRlYW0xLXByb2Quc3ZjLmNsdXN0ZXIubG9j
+    YWyCIyoucmVkaXMtdGVhbTItZGV2LnN2Yy5jbHVzdGVyLmxvY2FsgiQqLnJlZGlz
+    LXRlYW0yLXByb2Quc3ZjLmNsdXN0ZXIubG9jYWyCFioucmVkaXMtZW50ZXJwcmlz
+    ZS5zdmOCFSoucmVkaXMtdGVhbTEtZGV2LnN2Y4IWKi5yZWRpcy10ZWFtMS1wcm9k
+    LnN2Y4IVKi5yZWRpcy10ZWFtMi1kZXYuc3ZjghYqLnJlZGlzLXRlYW0yLXByb2Qu
+    c3ZjhwR/AAABMB0GA1UdDgQWBBTbm2yhqdnThcg4/4+080XahJDrgDAfBgNVHSME
+    GDAWgBRlUam3fmzfwWKAYYeHw6F5LDHzmTANBgkqhkiG9w0BAQsFAAOCAgEAdwDC
+    qvuU2/pHFVFe1qk5vGsAgcEsQ+35VinLJu+HZUybcccdpyX3ChtWjD0fYwtMzCVa
+    C+V/jjkzvEdU/v25NnMJMzO2dOGR8zRIThPR2UgZjREbsK3D8McyYqhN5aVT88gB
+    NndC0833VYyN9m2il7cQzLsdN4kw6sipEEroPqrrpEuHdcQzle78/QK86muBYcvL
+    pv4LQRK0NkbZhaHU8i+445cailWaT/ei+gFaMBXK5WhDu1toDzoUREikTugm5+UI
+    gTnR2z0z0CjmcXEOJ3PTgnmFxzc52zCqNFLn2Ual913Q1Eejsb6EXEc6vlWnqhTg
+    cb7BojW3t7bnig5VpcoCFlu/UZc75BT2lMWPzqNJFbNWFzK+zFtuufRi4v9hvIH2
+    DV2O5geTVW8KZAK9FrKySXk5GdDF3C1oH+VpJ25K4OvahkZIw+8SD/ol6MKJL+iW
+    UDHxiRtxt+pavmwJPPoZPs8yMz9u9ZwK4V+RHcE76682JYWSNMa8ofcAcXkZeijN
+    o6HlR7ktQqqEa4Rl/fvOxNrkkDWm966Uq+uhPHlyE3n6POshF4LXJlGCdDemndZm
+    FNtRRXXniK3WSKe8zNpbGMlGVzvW1E24PIsm36CaKcAhIZ93Y4yY6vBo3IW2fO+g
+    4oMtVSVmtCuN0STvi3w0N2Vgt2yG3LTQjGLYRoQ=
+    -----END CERTIFICATE-----
+    
+  key: |-
+
+    -----BEGIN PRIVATE KEY-----
+    MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDCTG+3YsxhHlPK
+    tYQlNdD8eRgP3uGbhJtak6Ws5MgrSDcuXlsyFf1w4qlfzQ/j+TP7+f+3EuyrZo7t
+    hNeV8XmzPW3Zf1fXqckCydMFXAvhPKIDdIYqNdJ3aazniF9B0ojI3O2zy0EE86QW
+    pYoAOxdeehUYsmvuh+4Ha72cuTtvhGCi/7baAU6THkhPkVwbzHl6Rh/kuTpq+reQ
+    oKld/Cygl3erM9jHawhhiuTOiQ2SDrDRaP+nORP9XQM8VvkEal/Ok5bu5v7oB8wY
+    yyasVdIsW33fiS6FjGBu/ULydei31pMAd6pKVJhYSrAuECQR/yvBsIjIrwXs69KF
+    SFK3sN/VAgMBAAECggEACSYL4pYn1RuA9Yaregxj0pIpxGGJvPFhq+z6Jum/f8OO
+    5EOJcWfLVFvlKWogk+rsJt1ZduImEQIAu9qpQ1mokdHUJiK9XPMVJb5MDdtiLHus
+    OJPC13eg+SzEI+4YvM2FfEkOy4xH+6GJ5I5shjXsvpmVUbbg/HfGXkS/8QJgc+Uy
+    NwCfnKywLxlyhe5e6PW/PVfhSfangrzR+WCapPT/ONcXp+hskrcSNnCBmD5CBBPx
+    v2qpaWtcvVrmFt/+L37KqTSmsYrbXX56zgYiITtjEVo6QW/xlNiSWUFBZkdPAd73
+    m/vieOsB3NxyS4C5Ni9ma8si6QqCPl0q/FW9SEMCBwKBgQDyAcTB+e4tNrGH7HNu
+    xogXkB2tc4dsplm0EW7JrONU94Q1kxjx52sXR5WLnu93DyAx8Q+oZggL0UXJrzlE
+    XraVZjKyrdvDFwfBj2LzmEbdpS5DelvsO6HhyjG/YaVFrE+zWca5rPBGD4xU2Uop
+    C2ZkBeSHO36pxAoIFE6FNJAFlwKBgQDNiHrvyj7HZRxhiGNyW/lNGR37rzYwX+4J
+    vnH1WmDn4PbKG05kz2jgyPw+uo5TTM29sD1lyyULfIXF9y/lf2sTyS4ynwTvtpOW
+    hGgsReNgXqPhFtUZS+FohY1PFz9yikcUR4JZCTo5RNUoYl0IUhvK4kH/2ZZ1uMv/
+    qOZPtCIrcwKBgCj9G7Iu/qQxy0fWSIbOoWY8RoqGMr24PyE8gqMt4SMW+RGJ5IO0
+    SnMa8L1BIhXsPeu3hItlHJ/Dxiouv2hREmOjd5rDz6DvWaTzADN56ybHP1q2crNE
+    NlrjwCFGDJQMZ0NdRUdVfyyenYoRc3oYMDNovBgbf4yJY5mStungyTPpAoGAH3Y0
+    21/qHDuuDIAEOQ07LEIcBNrdQKpula9BYn1jOBuHq4hih6v4MfCSLEgCYV3wYIkJ
+    3PsrwIZfM96Sxl6q1WyGVdlhuBAKp4+9IonQNIBINbx5AlZLOuS2rNSyMaZZGxGX
+    MmnnL70JpBTqiMuI1ZWs5K06CusuzwPbvXelg2ECgYEAxY/rQLHsL1ZPztmBP6S8
+    smtOivubjRLI5Af+xxrIYN29EUtn7RdocZeAmIwpCEwQcBWRy/HZp33hVw+4uxVG
+    CaRklLZegZ+b+U4ZLBWl3hIIwE3eerxA5czlHcyNIIGvDHurOszxaksMAqxH/kyg
+    YkHnEQElGJB/d4moFxet1Z0=
+    -----END PRIVATE KEY-----
+    
+  name: "cm"
+---
+# Source: redis-enterprise-cluster/templates/rec-certificate-secrets.yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: syncer-cert-secret
+  namespace: redis-enterprise
+  annotations:
+    argocd.argoproj.io/sync-wave: "-1"
+  labels:
+    app: redis-enterprise
+    cluster: demo
+    team: platform-team
+    component: certificates
+type: Opaque
+stringData:
+  certificate: |-
+
+    -----BEGIN CERTIFICATE-----
+    MIIGSTCCBDGgAwIBAgIUQZaFRHu04a7zsxizW7KzYStLVQkwDQYJKoZIhvcNAQEL
+    BQAwZzELMAkGA1UEBhMCQlIxCzAJBgNVBAgMAlNQMRIwEAYDVQQHDAlTYW8gUGF1
+    bG8xEjAQBgNVBAoMCURlbW9SZWRpczELMAkGA1UECwwCUFMxFjAUBgNVBAMMDWRl
+    bW8tcmVkaXMtY2EwHhcNMjYwMjI1MTk0MDAzWhcNMjcwMjI1MTk0MDAzWjBjMQsw
+    CQYDVQQGEwJCUjELMAkGA1UECAwCU1AxEjAQBgNVBAcMCVNhbyBQYXVsbzESMBAG
+    A1UECgwJRGVtb1JlZGlzMR8wHQYDVQQDDBZyZWRpcy1kZW1vLmV4YW1wbGUuY29t
+    MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwkxvt2LMYR5TyrWEJTXQ
+    /HkYD97hm4SbWpOlrOTIK0g3Ll5bMhX9cOKpX80P4/kz+/n/txLsq2aO7YTXlfF5
+    sz1t2X9X16nJAsnTBVwL4TyiA3SGKjXSd2ms54hfQdKIyNzts8tBBPOkFqWKADsX
+    XnoVGLJr7ofuB2u9nLk7b4Rgov+22gFOkx5IT5FcG8x5ekYf5Lk6avq3kKCpXfws
+    oJd3qzPYx2sIYYrkzokNkg6w0Wj/pzkT/V0DPFb5BGpfzpOW7ub+6AfMGMsmrFXS
+    LFt934kuhYxgbv1C8nXot9aTAHeqSlSYWEqwLhAkEf8rwbCIyK8F7OvShUhSt7Df
+    1QIDAQABo4IB7zCCAeswCQYDVR0TBAIwADAOBgNVHQ8BAf8EBAMCBaAwEwYDVR0l
+    BAwwCgYIKwYBBQUHAwEwggF3BgNVHREEggFuMIIBaoIWcmVkaXMtZGVtby5leGFt
+    cGxlLmNvbYIYKi5yZWRpcy1kZW1vLmV4YW1wbGUuY29tgiQqLnJlZGlzLWVudGVy
+    cHJpc2Uuc3ZjLmNsdXN0ZXIubG9jYWyCIyoucmVkaXMtdGVhbTEtZGV2LnN2Yy5j
+    bHVzdGVyLmxvY2FsgiQqLnJlZGlzLXRlYW0xLXByb2Quc3ZjLmNsdXN0ZXIubG9j
+    YWyCIyoucmVkaXMtdGVhbTItZGV2LnN2Yy5jbHVzdGVyLmxvY2FsgiQqLnJlZGlz
+    LXRlYW0yLXByb2Quc3ZjLmNsdXN0ZXIubG9jYWyCFioucmVkaXMtZW50ZXJwcmlz
+    ZS5zdmOCFSoucmVkaXMtdGVhbTEtZGV2LnN2Y4IWKi5yZWRpcy10ZWFtMS1wcm9k
+    LnN2Y4IVKi5yZWRpcy10ZWFtMi1kZXYuc3ZjghYqLnJlZGlzLXRlYW0yLXByb2Qu
+    c3ZjhwR/AAABMB0GA1UdDgQWBBTbm2yhqdnThcg4/4+080XahJDrgDAfBgNVHSME
+    GDAWgBRlUam3fmzfwWKAYYeHw6F5LDHzmTANBgkqhkiG9w0BAQsFAAOCAgEAdwDC
+    qvuU2/pHFVFe1qk5vGsAgcEsQ+35VinLJu+HZUybcccdpyX3ChtWjD0fYwtMzCVa
+    C+V/jjkzvEdU/v25NnMJMzO2dOGR8zRIThPR2UgZjREbsK3D8McyYqhN5aVT88gB
+    NndC0833VYyN9m2il7cQzLsdN4kw6sipEEroPqrrpEuHdcQzle78/QK86muBYcvL
+    pv4LQRK0NkbZhaHU8i+445cailWaT/ei+gFaMBXK5WhDu1toDzoUREikTugm5+UI
+    gTnR2z0z0CjmcXEOJ3PTgnmFxzc52zCqNFLn2Ual913Q1Eejsb6EXEc6vlWnqhTg
+    cb7BojW3t7bnig5VpcoCFlu/UZc75BT2lMWPzqNJFbNWFzK+zFtuufRi4v9hvIH2
+    DV2O5geTVW8KZAK9FrKySXk5GdDF3C1oH+VpJ25K4OvahkZIw+8SD/ol6MKJL+iW
+    UDHxiRtxt+pavmwJPPoZPs8yMz9u9ZwK4V+RHcE76682JYWSNMa8ofcAcXkZeijN
+    o6HlR7ktQqqEa4Rl/fvOxNrkkDWm966Uq+uhPHlyE3n6POshF4LXJlGCdDemndZm
+    FNtRRXXniK3WSKe8zNpbGMlGVzvW1E24PIsm36CaKcAhIZ93Y4yY6vBo3IW2fO+g
+    4oMtVSVmtCuN0STvi3w0N2Vgt2yG3LTQjGLYRoQ=
+    -----END CERTIFICATE-----
+    
+  key: |-
+
+    -----BEGIN PRIVATE KEY-----
+    MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDCTG+3YsxhHlPK
+    tYQlNdD8eRgP3uGbhJtak6Ws5MgrSDcuXlsyFf1w4qlfzQ/j+TP7+f+3EuyrZo7t
+    hNeV8XmzPW3Zf1fXqckCydMFXAvhPKIDdIYqNdJ3aazniF9B0ojI3O2zy0EE86QW
+    pYoAOxdeehUYsmvuh+4Ha72cuTtvhGCi/7baAU6THkhPkVwbzHl6Rh/kuTpq+reQ
+    oKld/Cygl3erM9jHawhhiuTOiQ2SDrDRaP+nORP9XQM8VvkEal/Ok5bu5v7oB8wY
+    yyasVdIsW33fiS6FjGBu/ULydei31pMAd6pKVJhYSrAuECQR/yvBsIjIrwXs69KF
+    SFK3sN/VAgMBAAECggEACSYL4pYn1RuA9Yaregxj0pIpxGGJvPFhq+z6Jum/f8OO
+    5EOJcWfLVFvlKWogk+rsJt1ZduImEQIAu9qpQ1mokdHUJiK9XPMVJb5MDdtiLHus
+    OJPC13eg+SzEI+4YvM2FfEkOy4xH+6GJ5I5shjXsvpmVUbbg/HfGXkS/8QJgc+Uy
+    NwCfnKywLxlyhe5e6PW/PVfhSfangrzR+WCapPT/ONcXp+hskrcSNnCBmD5CBBPx
+    v2qpaWtcvVrmFt/+L37KqTSmsYrbXX56zgYiITtjEVo6QW/xlNiSWUFBZkdPAd73
+    m/vieOsB3NxyS4C5Ni9ma8si6QqCPl0q/FW9SEMCBwKBgQDyAcTB+e4tNrGH7HNu
+    xogXkB2tc4dsplm0EW7JrONU94Q1kxjx52sXR5WLnu93DyAx8Q+oZggL0UXJrzlE
+    XraVZjKyrdvDFwfBj2LzmEbdpS5DelvsO6HhyjG/YaVFrE+zWca5rPBGD4xU2Uop
+    C2ZkBeSHO36pxAoIFE6FNJAFlwKBgQDNiHrvyj7HZRxhiGNyW/lNGR37rzYwX+4J
+    vnH1WmDn4PbKG05kz2jgyPw+uo5TTM29sD1lyyULfIXF9y/lf2sTyS4ynwTvtpOW
+    hGgsReNgXqPhFtUZS+FohY1PFz9yikcUR4JZCTo5RNUoYl0IUhvK4kH/2ZZ1uMv/
+    qOZPtCIrcwKBgCj9G7Iu/qQxy0fWSIbOoWY8RoqGMr24PyE8gqMt4SMW+RGJ5IO0
+    SnMa8L1BIhXsPeu3hItlHJ/Dxiouv2hREmOjd5rDz6DvWaTzADN56ybHP1q2crNE
+    NlrjwCFGDJQMZ0NdRUdVfyyenYoRc3oYMDNovBgbf4yJY5mStungyTPpAoGAH3Y0
+    21/qHDuuDIAEOQ07LEIcBNrdQKpula9BYn1jOBuHq4hih6v4MfCSLEgCYV3wYIkJ
+    3PsrwIZfM96Sxl6q1WyGVdlhuBAKp4+9IonQNIBINbx5AlZLOuS2rNSyMaZZGxGX
+    MmnnL70JpBTqiMuI1ZWs5K06CusuzwPbvXelg2ECgYEAxY/rQLHsL1ZPztmBP6S8
+    smtOivubjRLI5Af+xxrIYN29EUtn7RdocZeAmIwpCEwQcBWRy/HZp33hVw+4uxVG
+    CaRklLZegZ+b+U4ZLBWl3hIIwE3eerxA5czlHcyNIIGvDHurOszxaksMAqxH/kyg
+    YkHnEQElGJB/d4moFxet1Z0=
+    -----END PRIVATE KEY-----
+    
+  name: "syncer"
+---
+# Source: redis-enterprise-cluster/templates/rec-certificate-secrets.yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: metrics-exporter-cert-secret
+  namespace: redis-enterprise
+  annotations:
+    argocd.argoproj.io/sync-wave: "-1"
+  labels:
+    app: redis-enterprise
+    cluster: demo
+    team: platform-team
+    component: certificates
+type: Opaque
+stringData:
+  certificate: |-
+
+    -----BEGIN CERTIFICATE-----
+    MIIGSTCCBDGgAwIBAgIUQZaFRHu04a7zsxizW7KzYStLVQkwDQYJKoZIhvcNAQEL
+    BQAwZzELMAkGA1UEBhMCQlIxCzAJBgNVBAgMAlNQMRIwEAYDVQQHDAlTYW8gUGF1
+    bG8xEjAQBgNVBAoMCURlbW9SZWRpczELMAkGA1UECwwCUFMxFjAUBgNVBAMMDWRl
+    bW8tcmVkaXMtY2EwHhcNMjYwMjI1MTk0MDAzWhcNMjcwMjI1MTk0MDAzWjBjMQsw
+    CQYDVQQGEwJCUjELMAkGA1UECAwCU1AxEjAQBgNVBAcMCVNhbyBQYXVsbzESMBAG
+    A1UECgwJRGVtb1JlZGlzMR8wHQYDVQQDDBZyZWRpcy1kZW1vLmV4YW1wbGUuY29t
+    MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwkxvt2LMYR5TyrWEJTXQ
+    /HkYD97hm4SbWpOlrOTIK0g3Ll5bMhX9cOKpX80P4/kz+/n/txLsq2aO7YTXlfF5
+    sz1t2X9X16nJAsnTBVwL4TyiA3SGKjXSd2ms54hfQdKIyNzts8tBBPOkFqWKADsX
+    XnoVGLJr7ofuB2u9nLk7b4Rgov+22gFOkx5IT5FcG8x5ekYf5Lk6avq3kKCpXfws
+    oJd3qzPYx2sIYYrkzokNkg6w0Wj/pzkT/V0DPFb5BGpfzpOW7ub+6AfMGMsmrFXS
+    LFt934kuhYxgbv1C8nXot9aTAHeqSlSYWEqwLhAkEf8rwbCIyK8F7OvShUhSt7Df
+    1QIDAQABo4IB7zCCAeswCQYDVR0TBAIwADAOBgNVHQ8BAf8EBAMCBaAwEwYDVR0l
+    BAwwCgYIKwYBBQUHAwEwggF3BgNVHREEggFuMIIBaoIWcmVkaXMtZGVtby5leGFt
+    cGxlLmNvbYIYKi5yZWRpcy1kZW1vLmV4YW1wbGUuY29tgiQqLnJlZGlzLWVudGVy
+    cHJpc2Uuc3ZjLmNsdXN0ZXIubG9jYWyCIyoucmVkaXMtdGVhbTEtZGV2LnN2Yy5j
+    bHVzdGVyLmxvY2FsgiQqLnJlZGlzLXRlYW0xLXByb2Quc3ZjLmNsdXN0ZXIubG9j
+    YWyCIyoucmVkaXMtdGVhbTItZGV2LnN2Yy5jbHVzdGVyLmxvY2FsgiQqLnJlZGlz
+    LXRlYW0yLXByb2Quc3ZjLmNsdXN0ZXIubG9jYWyCFioucmVkaXMtZW50ZXJwcmlz
+    ZS5zdmOCFSoucmVkaXMtdGVhbTEtZGV2LnN2Y4IWKi5yZWRpcy10ZWFtMS1wcm9k
+    LnN2Y4IVKi5yZWRpcy10ZWFtMi1kZXYuc3ZjghYqLnJlZGlzLXRlYW0yLXByb2Qu
+    c3ZjhwR/AAABMB0GA1UdDgQWBBTbm2yhqdnThcg4/4+080XahJDrgDAfBgNVHSME
+    GDAWgBRlUam3fmzfwWKAYYeHw6F5LDHzmTANBgkqhkiG9w0BAQsFAAOCAgEAdwDC
+    qvuU2/pHFVFe1qk5vGsAgcEsQ+35VinLJu+HZUybcccdpyX3ChtWjD0fYwtMzCVa
+    C+V/jjkzvEdU/v25NnMJMzO2dOGR8zRIThPR2UgZjREbsK3D8McyYqhN5aVT88gB
+    NndC0833VYyN9m2il7cQzLsdN4kw6sipEEroPqrrpEuHdcQzle78/QK86muBYcvL
+    pv4LQRK0NkbZhaHU8i+445cailWaT/ei+gFaMBXK5WhDu1toDzoUREikTugm5+UI
+    gTnR2z0z0CjmcXEOJ3PTgnmFxzc52zCqNFLn2Ual913Q1Eejsb6EXEc6vlWnqhTg
+    cb7BojW3t7bnig5VpcoCFlu/UZc75BT2lMWPzqNJFbNWFzK+zFtuufRi4v9hvIH2
+    DV2O5geTVW8KZAK9FrKySXk5GdDF3C1oH+VpJ25K4OvahkZIw+8SD/ol6MKJL+iW
+    UDHxiRtxt+pavmwJPPoZPs8yMz9u9ZwK4V+RHcE76682JYWSNMa8ofcAcXkZeijN
+    o6HlR7ktQqqEa4Rl/fvOxNrkkDWm966Uq+uhPHlyE3n6POshF4LXJlGCdDemndZm
+    FNtRRXXniK3WSKe8zNpbGMlGVzvW1E24PIsm36CaKcAhIZ93Y4yY6vBo3IW2fO+g
+    4oMtVSVmtCuN0STvi3w0N2Vgt2yG3LTQjGLYRoQ=
+    -----END CERTIFICATE-----
+    
+  key: |-
+
+    -----BEGIN PRIVATE KEY-----
+    MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDCTG+3YsxhHlPK
+    tYQlNdD8eRgP3uGbhJtak6Ws5MgrSDcuXlsyFf1w4qlfzQ/j+TP7+f+3EuyrZo7t
+    hNeV8XmzPW3Zf1fXqckCydMFXAvhPKIDdIYqNdJ3aazniF9B0ojI3O2zy0EE86QW
+    pYoAOxdeehUYsmvuh+4Ha72cuTtvhGCi/7baAU6THkhPkVwbzHl6Rh/kuTpq+reQ
+    oKld/Cygl3erM9jHawhhiuTOiQ2SDrDRaP+nORP9XQM8VvkEal/Ok5bu5v7oB8wY
+    yyasVdIsW33fiS6FjGBu/ULydei31pMAd6pKVJhYSrAuECQR/yvBsIjIrwXs69KF
+    SFK3sN/VAgMBAAECggEACSYL4pYn1RuA9Yaregxj0pIpxGGJvPFhq+z6Jum/f8OO
+    5EOJcWfLVFvlKWogk+rsJt1ZduImEQIAu9qpQ1mokdHUJiK9XPMVJb5MDdtiLHus
+    OJPC13eg+SzEI+4YvM2FfEkOy4xH+6GJ5I5shjXsvpmVUbbg/HfGXkS/8QJgc+Uy
+    NwCfnKywLxlyhe5e6PW/PVfhSfangrzR+WCapPT/ONcXp+hskrcSNnCBmD5CBBPx
+    v2qpaWtcvVrmFt/+L37KqTSmsYrbXX56zgYiITtjEVo6QW/xlNiSWUFBZkdPAd73
+    m/vieOsB3NxyS4C5Ni9ma8si6QqCPl0q/FW9SEMCBwKBgQDyAcTB+e4tNrGH7HNu
+    xogXkB2tc4dsplm0EW7JrONU94Q1kxjx52sXR5WLnu93DyAx8Q+oZggL0UXJrzlE
+    XraVZjKyrdvDFwfBj2LzmEbdpS5DelvsO6HhyjG/YaVFrE+zWca5rPBGD4xU2Uop
+    C2ZkBeSHO36pxAoIFE6FNJAFlwKBgQDNiHrvyj7HZRxhiGNyW/lNGR37rzYwX+4J
+    vnH1WmDn4PbKG05kz2jgyPw+uo5TTM29sD1lyyULfIXF9y/lf2sTyS4ynwTvtpOW
+    hGgsReNgXqPhFtUZS+FohY1PFz9yikcUR4JZCTo5RNUoYl0IUhvK4kH/2ZZ1uMv/
+    qOZPtCIrcwKBgCj9G7Iu/qQxy0fWSIbOoWY8RoqGMr24PyE8gqMt4SMW+RGJ5IO0
+    SnMa8L1BIhXsPeu3hItlHJ/Dxiouv2hREmOjd5rDz6DvWaTzADN56ybHP1q2crNE
+    NlrjwCFGDJQMZ0NdRUdVfyyenYoRc3oYMDNovBgbf4yJY5mStungyTPpAoGAH3Y0
+    21/qHDuuDIAEOQ07LEIcBNrdQKpula9BYn1jOBuHq4hih6v4MfCSLEgCYV3wYIkJ
+    3PsrwIZfM96Sxl6q1WyGVdlhuBAKp4+9IonQNIBINbx5AlZLOuS2rNSyMaZZGxGX
+    MmnnL70JpBTqiMuI1ZWs5K06CusuzwPbvXelg2ECgYEAxY/rQLHsL1ZPztmBP6S8
+    smtOivubjRLI5Af+xxrIYN29EUtn7RdocZeAmIwpCEwQcBWRy/HZp33hVw+4uxVG
+    CaRklLZegZ+b+U4ZLBWl3hIIwE3eerxA5czlHcyNIIGvDHurOszxaksMAqxH/kyg
+    YkHnEQElGJB/d4moFxet1Z0=
+    -----END PRIVATE KEY-----
+    
+  name: "metrics_exporter"
+---
+# Source: redis-enterprise-cluster/templates/alloy-sidecar-configmap.yaml
+# Grafana Alloy Sidecar Configuration for Redis Enterprise Internal Logs
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: alloy-sidecar-config
+  namespace: redis-enterprise
+  labels:
+    app: redis-enterprise
+    component: logging
+    cluster: demo
+data:
+  config.alloy: |
+    // Redis Enterprise Internal Logs Collection
+    // Collects logs from /var/opt/redislabs/log/ and sends to Loki
+
+    // Expand all Redis Enterprise internal log files
+    local.file_match "redis_internal_logs" {
+      path_targets = [
+        {
+          __path__ = "/var/opt/redislabs/log/*.log",
+        },
+      ]
+      sync_period = "10s"
+    }
+
+    // Tail all matched log files
+    loki.source.file "redis_internal_logs" {
+      targets = local.file_match.redis_internal_logs.targets
+      forward_to    = [loki.process.add_labels.receiver]
+      tail_from_end = true
+    }
+
+    // Add log metadata labels (job/log_type) and cluster/namespace labels
+    loki.process "add_labels" {
+      forward_to = [loki.write.loki_gateway.receiver]
+
+      stage.static_labels {
+        values = {
+          job                       = "redis-enterprise",
+          log_type                  = "redis-enterprise-internal",
+          cluster                   = "demo",
+          namespace                 = "redis-enterprise",
+          kubernetes_namespace_name = "redis-enterprise",
+        }
+      }
+    }
+
+    // Write to Loki gateway
+    loki.write "loki_gateway" {
+      endpoint {
+        url = "https://logging-loki-gateway-http.openshift-logging.svc:8080/api/logs/v1/application/loki/api/v1/push"
+        bearer_token_file = "/var/run/secrets/kubernetes.io/serviceaccount/token"
+        tls_config {
+          insecure_skip_verify = true
+        }
+
+        // ESSENTIAL for OpenShift Logging/Observatorium multi-tenant gateway
+        headers = {
+          "X-Scope-OrgID" = "application",
+        }
+      }
+    }
+---
+# Source: redis-enterprise-cluster/templates/service-metrics.yaml
+# Service to expose metrics endpoint for Prometheus
+# This service targets the metrics port (8070) on Redis Enterprise pods
+apiVersion: v1
+kind: Service
+metadata:
+  name: demo-redis-cluster-metrics
+  namespace: redis-enterprise
+  labels:
+    cluster: demo
+    team: platform-team
+    component: metrics
+    app: redis-enterprise
+    redis.io/cluster: demo-redis-cluster
+    app.kubernetes.io/managed-by: "argocd"
+    cluster: "demo"
+    gitops: "argocd"
+  annotations:
+    description: Shared Redis Enterprise Cluster - Demo multi-tenant setup
+spec:
+  type: ClusterIP
+  selector:
+    app: redis-enterprise
+    redis.io/cluster: demo-redis-cluster
+  ports:
+    - name: metrics
+      port: 8070
+      targetPort: 8070
+      protocol: TCP
+---
+# Source: redis-enterprise-cluster/templates/rec.yaml
+apiVersion: app.redislabs.com/v1
+kind: RedisEnterpriseCluster
+metadata:
+  name: demo-redis-cluster
+  namespace: redis-enterprise
+  labels:
+    cluster: demo
+    team: platform-team
+    datacenter: dc1
+    app.kubernetes.io/managed-by: "argocd"
+    cluster: "demo"
+    gitops: "argocd"
+  annotations:
+    # Prevent accidental deletion by ArgoCD
+    argocd.argoproj.io/sync-options: "Prune=false"
+    description: Shared Redis Enterprise Cluster - Demo multi-tenant setup
+spec:
+  nodes: 3
+  certificates:
+    proxyCertificateSecretName: "proxy-cert-secret"
+    apiCertificateSecretName: "api-cert-secret"
+    cmCertificateSecretName: "cm-cert-secret"
+    syncerCertificateSecretName: "syncer-cert-secret"
+    metricsExporterCertificateSecretName: "metrics-exporter-cert-secret"
+  
+  redisEnterpriseNodeResources:
+    requests:
+      cpu: "1"
+      memory: "2Gi"
+    limits:
+      cpu: "2"
+      memory: "4Gi"
+  # Persistent storage configuration
+  persistentSpec:
+    enabled: true
+    storageClassName: ocs-external-storagecluster-ceph-rbd
+    volumeSize: 50Gi
+  
+  redisEnterpriseImageSpec:
+    imagePullPolicy: IfNotPresent
+    versionTag: "8.0.10-81"
+  servicesRiggerSpec:
+    databaseServiceType: "cluster_ip"
+    serviceNaming: "bdb_name"
+  # Pod anti-affinity rules for high availability
+  podAntiAffinity:
+    preferredDuringSchedulingIgnoredDuringExecution:
+    - podAffinityTerm:
+        labelSelector:
+          matchLabels:
+            app: redis-enterprise
+        topologyKey: kubernetes.io/hostname
+      weight: 100
+    - podAffinityTerm:
+        labelSelector:
+          matchLabels:
+            app: redis-enterprise
+        topologyKey: topology.kubernetes.io/zone
+      weight: 50
+  # Grafana Alloy sidecar for internal logs collection
+  sideContainersSpec:
+    - name: alloy
+      image: grafana/alloy:latest
+      args:
+        - run
+        - --server.http.listen-addr=0.0.0.0:12345
+        - --storage.path=/tmp/alloy
+        - /etc/alloy/config.alloy
+      env:
+        - name: CLUSTER_NAME
+          value: "demo-redis-cluster"
+        - name: NAMESPACE
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.namespace
+        - name: POD_NAME
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        - name: NODE_NAME
+          valueFrom:
+            fieldRef:
+              fieldPath: spec.nodeName
+      volumeMounts:
+        - name: redis-enterprise-storage
+          mountPath: /var/opt/redislabs/log
+          subPath: logs
+          readOnly: true
+        - name: alloy-config
+          mountPath: /etc/alloy
+      resources:
+        requests:
+          cpu: "100m"
+          memory: "128Mi"
+        limits:
+          cpu: "200m"
+          memory: "256Mi"
+      securityContext:
+        runAsNonRoot: true
+        allowPrivilegeEscalation: false
+        capabilities:
+          drop:
+            - ALL
+
+  # Additional volumes for sidecar containers
+  volumes:
+    - name: alloy-config
+      configMap:
+        name: alloy-sidecar-config
+---
+# Source: redis-enterprise-cluster/templates/route-ui.yaml
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: redis-enterprise-ui
+  namespace: redis-enterprise
+  labels:
+    cluster: demo
+    team: platform-team
+    component: ui
+    app.kubernetes.io/managed-by: "argocd"
+    cluster: "demo"
+    gitops: "argocd"
+  annotations:
+    description: Shared Redis Enterprise Cluster - Demo multi-tenant setup
+spec:
+  to:
+    kind: Service
+    name: demo-redis-cluster-ui
+  port:
+    targetPort: 8443
+  tls:
+    termination: passthrough
+    insecureEdgeTerminationPolicy: Redirect
+---
+# Source: redis-enterprise-cluster/templates/servicemonitor.yaml
+# ServiceMonitor for Prometheus to scrape Redis Enterprise metrics
+# Metrics endpoint: https://<pod>:8070/v2 (HTTPS with self-signed cert)
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: demo-redis-cluster-metrics
+  namespace: redis-enterprise
+  labels:
+    cluster: demo
+    team: platform-team
+    component: metrics
+    app.kubernetes.io/managed-by: "argocd"
+    cluster: "demo"
+    gitops: "argocd"
+  annotations:
+    description: Shared Redis Enterprise Cluster - Demo multi-tenant setup
+spec:
+  # Select the Redis Enterprise pods
+  selector:
+    matchLabels:
+      app: redis-enterprise
+      redis.io/cluster: demo-redis-cluster
+
+  # Namespace where the pods are located
+  namespaceSelector:
+    matchNames:
+      - redis-enterprise
+
+  # Endpoint configuration
+  endpoints:
+    - port: metrics
+      path: /v2
+      interval: 30s
+      scrapeTimeout: 10s
+      scheme: https
+      tlsConfig:
+        insecureSkipVerify: true
+      
+      # Relabeling to add cluster information
+      relabelings:
+        - sourceLabels: [__meta_kubernetes_pod_name]
+          targetLabel: pod
+        - sourceLabels: [__meta_kubernetes_namespace]
+          targetLabel: namespace
+        - targetLabel: cluster
+          replacement: demo
+        - targetLabel: team
+          replacement: platform-team

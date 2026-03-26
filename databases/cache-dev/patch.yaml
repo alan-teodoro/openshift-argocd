@@ -1,0 +1,11 @@
+apiVersion: app.redislabs.com/v1alpha1
+kind: RedisEnterpriseDatabase
+metadata:
+  name: cache-dev
+  namespace: redis-dev
+  labels:
+    team: dev-team
+    environment: dev
+spec:
+  redisEnterpriseCluster:
+    name: demo-redis-cluster

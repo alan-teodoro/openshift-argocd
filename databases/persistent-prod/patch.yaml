@@ -1,0 +1,11 @@
+apiVersion: app.redislabs.com/v1alpha1
+kind: RedisEnterpriseDatabase
+metadata:
+  name: persistent-prod
+  namespace: redis-prod
+  labels:
+    team: prod-team
+    environment: prod
+spec:
+  redisEnterpriseCluster:
+    name: demo-redis-cluster
