@@ -19,3 +19,19 @@ spec:
     enabled: true
     storageClassName: ocs-external-storagecluster-ceph-rbd
     volumeSize: 30Gi
+---
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: redis-enterprise-ui
+  namespace: redis-enterprise
+  labels:
+    app.kubernetes.io/managed-by: "argocd"
+spec:
+  to:
+    kind: Service
+    name: demo-redis-cluster-ui
+  port:
+    targetPort: 8443
+  tls:
+    termination: passthrough
