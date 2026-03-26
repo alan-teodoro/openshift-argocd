@@ -3,7 +3,7 @@
   value: persistent-prod
 - op: replace
   path: /metadata/namespace
-  value: redis-prod
+  value: redis-enterprise
 - op: add
   path: /metadata/labels/team
   value: prod-team
