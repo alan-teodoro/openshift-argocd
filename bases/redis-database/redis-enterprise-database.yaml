@@ -11,7 +11,7 @@ spec:
     name: demo-redis-cluster
   type: redis
   memorySize: 1GB
-  replication: true
+  replication: false
   persistence: aofEverySecond
   tlsMode: enabled
   evictionPolicy: noeviction

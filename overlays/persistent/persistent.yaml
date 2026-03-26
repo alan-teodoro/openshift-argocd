@@ -7,4 +7,4 @@ spec:
   memorySize: 2GB
   evictionPolicy: noeviction
   persistence: aofEverySecond
-  replication: true
+  replication: false
