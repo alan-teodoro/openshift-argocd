@@ -9,7 +9,18 @@ This repository contains a simple demo for deploying applications on OpenShift u
 ## Prerequisites
 
 - OpenShift cluster with ArgoCD operator installed
-- Redis Enterprise operator installed
+- Redis Enterprise operator installed (already installed in your cluster)
+
+## Usage
+
+1. Clone this repository
+2. Push to GitHub under your account
+3. In ArgoCD, create the Application for the cluster: `argocd-apps/redis-cluster-app.yaml`
+4. Create the ApplicationSet for databases: `argocd-apps/redis-databases-appset.yaml`
+5. To add a new database, create a new subdir in `databases/` with:
+   - `kustomization.yaml` - references an overlay (cache, persistent, or create your own)
+   - `patch.yaml` - customize specific settings (name, namespace, cluster reference, etc.)
+6. Commit and push; ArgoCD will automatically create the app and deploy the database
 
 ## Structure
 
@@ -24,12 +35,13 @@ This repository contains a simple demo for deploying applications on OpenShift u
 
 1. Clone this repository
 2. Push to GitHub under your account
-3. In ArgoCD, create the Application for the cluster: `argocd-apps/redis-cluster-app.yaml`
-4. Create the ApplicationSet for databases: `argocd-apps/redis-databases-appset.yaml`
-5. To add a new database, create a new subdir in `databases/` with:
+3. **Install Redis Enterprise Operator first** (see Installation Steps above)
+4. In ArgoCD, create the Application for the cluster: `argocd-apps/redis-cluster-app.yaml`
+5. Create the ApplicationSet for databases: `argocd-apps/redis-databases-appset.yaml`
+6. To add a new database, create a new subdir in `databases/` with:
    - `kustomization.yaml` - references an overlay (cache, persistent, or create your own)
    - `patch.yaml` - customize specific settings (name, namespace, cluster reference, etc.)
-6. Commit and push; ArgoCD will automatically create the app and deploy the database
+7. Commit and push; ArgoCD will automatically create the app and deploy the database
 
 ## Overlays
 
