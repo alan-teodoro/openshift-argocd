@@ -6,6 +6,13 @@ metadata:
   labels:
     team: prod-team
     environment: prod
+    database-type: persistent
 spec:
   redisEnterpriseCluster:
     name: demo-redis-cluster
+  # Persistent settings - important data with AOF persistence
+  memorySize: 4GB
+  type: redis
+  evictionPolicy: noeviction
+  persistence: aofEverySecond
+  replication: true

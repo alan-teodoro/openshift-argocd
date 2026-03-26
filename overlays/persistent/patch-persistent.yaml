@@ -1,8 +1,0 @@
-apiVersion: app.redislabs.com/v1alpha1
-kind: RedisEnterpriseDatabase
-metadata:
-  name: persistent-dev  # Override
-spec:
-  persistence: aofEverySecond
-  memorySize: 4GB
-  evictionPolicy: noeviction
