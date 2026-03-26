@@ -1,40 +1,4 @@
 ---
-apiVersion: v1
-kind: Secret
-metadata:
-  name: redis-tls-cert
-  namespace: redis-enterprise
-  annotations:
-    argocd.argoproj.io/sync-wave: "-1"
-type: Opaque
-stringData:
-  certificate: |
-    -----BEGIN CERTIFICATE-----
-    MIIBkTCB+wIJAKHHCgVZLXL8MA0GCSqGSIb3DQEBBQUAMBMxETAPBgNVBAMMCHJl
-    ZGlzLWNhMB4XDTE2MDEyMjE5MTAxM1oXDTI2MDExOTE5MTAxM1owEzERMA8GA1UE
-    AwwIcmVkaXMtY2EwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBANvZJ2vNYTHF
-    eHExezTKj6LtCdFz7MUmROmWQNBKqvLc8pVjx3pGrXLNDQnjXYXsZnGQC2Rjvt9J
-    3J0LvJPMj7D6PkwJhQQfQvPgPdqVHsljqNEGgKSS3qkX1gNTaFz0mKjSgN8u4M+k
-    wOZ0E9Lnxq1qMGW3H3mJWD0g0jOYQOPFAgMBAAEwDQYJKoZIhvcNAQEFBQADgYEA
-    N/RiC1bBrmH8yXJ1Z9LqLPYNhUK3lW4rjKVqMOzFvTx/nQ9a3EfMm6L3C00M4XBu
-    1TpIvPbZ5JJCFPVrqJ0xLzuB2f4P9lO9SpJ7tPvOl8UPZ3Yl7Zy7KoH9PYKqLg8f
-    bqDJiIbfgJW+5q9iXlBBIhyoNxFqYHWgmH5H4A7BbqM=
-    -----END CERTIFICATE-----
-  key: |
-    -----BEGIN PRIVATE KEY-----
-    MIICdgIBADANBgkqhkiG9w0BAQEFAASCAmAwggJcAgEAAoGBANvZJ2vNYTHFeHEx
-    ezTKj6LtCdFz7MUmROmWQNBKqvLc8pVjx3pGrXLNDQnjXYXsZnGQC2Rjvt9J3J0L
-    vJPMj7D6PkwJhQQfQvPgPdqVHsljqNEGgKSS3qkX1gNTaFz0mKjSgN8u4M+kwOZ0
-    E9Lnxq1qMGW3H3mJWD0g0jOYQOPFAgMBAAECgYAXe8R1WIE7sZ8dMHzXX+aRAH+e
-    8Z/p4KLHvPy9rC1tR3fh3qFJLHZQY7HzvNjN8Q2GKxLvQQQ9gVDJ14Ey8bZ0SYJJ
-    sFH8kbfb6MvJmBjN8S0F9QXo0fZeQKczpN5LKrYDhJjIKJ7kMX8sG4jO9WBRiKNu
-    MIVUvjDjWqYdAQJBAP0hn0nz+jzLQDm6pqSY5HWV7jIpEHfLqB3QxJOvLLY3hy0T
-    QG2F4uNSm2J3s9bL/5QgyDJ0f0N8zKUWlK0I6scCQQDcIoqMJd9Pb/PZlhiUFWrg
-    I7EfYZPJLYCx3dWuOlZRcSFKXzLlKjz6XZ1N4zLnUP7PSLj1e41Z3H0f0Pd8QfAH
-    AkEAxWoWpcWGBmT8DVGDhqGvDl2qQYtvSQNfJVvEsq9TjuV1LqIQJwDM7gI5yq7p
-    qmD/bVnfKsWkZSYhvVmNpJvfsSJAV5gOK5RH
-    -----END PRIVATE KEY-----
----
 apiVersion: app.redislabs.com/v1
 kind: RedisEnterpriseCluster
 metadata:
@@ -44,8 +8,6 @@ metadata:
     app.kubernetes.io/managed-by: "argocd"
 spec:
   nodes: 3
-  certificates:
-    proxyCertificateSecretName: "redis-tls-cert"
   redisEnterpriseNodeResources:
     requests:
       cpu: "500m"
