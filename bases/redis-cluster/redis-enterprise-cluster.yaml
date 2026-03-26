@@ -11,10 +11,10 @@ spec:
   redisEnterpriseNodeResources:
     requests:
       cpu: "500m"
-      memory: "2Gi"
+      memory: "4Gi"
     limits:
       cpu: "2"
-      memory: "4Gi"
+      memory: "8Gi"
   persistentSpec:
     enabled: true
     storageClassName: ocs-external-storagecluster-ceph-rbd

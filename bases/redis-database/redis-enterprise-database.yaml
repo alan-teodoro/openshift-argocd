@@ -10,7 +10,7 @@ spec:
   redisEnterpriseCluster:
     name: demo-redis-cluster
   type: redis
-  memorySize: 2GB
+  memorySize: 1GB
   replication: true
   persistence: aofEverySecond
   tlsMode: enabled

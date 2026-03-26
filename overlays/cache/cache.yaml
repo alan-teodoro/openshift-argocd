@@ -4,6 +4,6 @@ metadata:
   name: database
 spec:
   type: redis
-  memorySize: 1GB
+  memorySize: 512MB
   evictionPolicy: allkeys-lru
   persistence: disabled
