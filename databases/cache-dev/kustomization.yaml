@@ -11,9 +11,18 @@ patches:
       version: v1alpha1
       kind: RedisEnterpriseDatabase
       name: database
-  - path: route-patch.yaml
-    target:
-      group: route.openshift.io
-      version: v1
-      kind: Route
-      name: database
+replacements:
+  - source:
+      group: app.redislabs.com
+      version: v1alpha1
+      kind: RedisEnterpriseDatabase
+      fieldPath: metadata.name
+    targets:
+      - select:
+          group: route.openshift.io
+          version: v1
+          kind: Route
+          name: database
+        fieldPaths:
+          - metadata.name
+          - spec.to.name

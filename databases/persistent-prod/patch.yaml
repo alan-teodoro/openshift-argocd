@@ -1,9 +1,6 @@
 - op: replace
   path: /metadata/name
   value: persistent-prod
-- op: replace
-  path: /metadata/namespace
-  value: redis-enterprise
 - op: add
   path: /metadata/labels/team
   value: prod-team
@@ -13,6 +10,3 @@
 - op: add
   path: /metadata/labels/database-type
   value: persistent
-- op: replace
-  path: /spec/redisEnterpriseCluster/name
-  value: demo-redis-cluster

@@ -26,8 +26,6 @@ metadata:
 spec:
   to:
     kind: Service
-    name: redis-12000
-  port:
-    targetPort: 12000
+    name: database
   tls:
     termination: passthrough

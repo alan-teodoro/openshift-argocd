@@ -1,6 +1,0 @@
-- op: replace
-  path: /metadata/name
-  value: cache-dev
-- op: replace
-  path: /metadata/namespace
-  value: redis-enterprise
