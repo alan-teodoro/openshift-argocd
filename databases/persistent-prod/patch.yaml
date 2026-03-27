@@ -12,4 +12,4 @@
   value: persistent
 - op: replace
   path: /spec/memorySize
-  value: 1Gi
+  value: 1GB
