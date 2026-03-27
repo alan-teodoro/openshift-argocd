@@ -10,6 +10,3 @@
 - op: add
   path: /metadata/labels/database-type
   value: persistent
-- op: replace
-  path: /spec/memorySize
-  value: 1GB
