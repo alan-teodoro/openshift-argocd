@@ -10,8 +10,8 @@ spec:
   nodes: 3
   redisEnterpriseNodeResources:
     requests:
-      cpu: "500m"
-      memory: "4Gi"
+      cpu: "2"
+      memory: "8Gi"
     limits:
       cpu: "2"
       memory: "8Gi"
